@@ -1,0 +1,11 @@
+.terraform/
+.terraformrc
+Server-Based-App1/.terraform/
+
+*.tfstate
+*tfstate/backup
+Server-Based-App1/state.tf
+.terraform.lock.hcl/
+Server-Based-App1/terraform.tfstate
+
+crash.log
