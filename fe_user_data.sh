@@ -25,5 +25,5 @@ systemctl start nginx
 systemctl enable amazon-ssm-agent
 systemctl restart amazon-ssm-agent
 
-echo "<h1>Hello from the Frontend - $(hostname -f)</h1>" > /usr/share/nginx/html/index.html
+echo "<h1>Hello from the CICD-Deployed Frontend - $(hostname -f)</h1>" > /usr/share/nginx/html/index.html
 

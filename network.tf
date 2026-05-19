@@ -1,8 +1,3 @@
-provider "aws" {
-  profile = "AWSCloud1-Account"
-  region = "eu-west-2"
-  
-}
 
 # Pulling AZs for a particular region
 data "aws_availability_zones" "available" {}
