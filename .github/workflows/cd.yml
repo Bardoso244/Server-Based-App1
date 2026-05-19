@@ -1,4 +1,4 @@
-name: Teraform CD
+name: Terraform CD
 
 on:
   push:
@@ -11,7 +11,7 @@ permissions:
 jobs:
   terraform-apply:
     runs-on: ubuntu-latest
-    envrionment: production
+    environment: production
 
     steps:
       - name: Checkout code
@@ -33,4 +33,4 @@ jobs:
         run: terraform init
 
       - name: Apply Terraform changes
-        run: terraform apply -auto-approve tfplan
+        run: terraform apply -auto-approve

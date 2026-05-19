@@ -1,7 +1,9 @@
-name: Teraform CD
+name: Terraform CI
 
 on:
   push:
+    branches: [main]
+  pull_request:
     branches: [main]
 
 permissions:
@@ -9,9 +11,8 @@ permissions:
   contents: read
 
 jobs:
-  terraform-apply:
+  deploy:
     runs-on: ubuntu-latest
-    envrionment: production
 
     steps:
       - name: Checkout code
@@ -29,8 +30,17 @@ jobs:
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
 
+      - name: Format Terraform code
+        run: terraform fmt -check -recursive
+
       - name: Initialize Terraform
         run: terraform init
 
-      - name: Apply Terraform changes
-        run: terraform apply -auto-approve tfplan
+      - name: Validate Terraform configuration
+        run: terraform validate
+
+      - name: Plan Terraform changes
+        run: terraform plan -out=tfplan
+
+      - name: Show Terraform plan output
+        run: terraform show tfplan
