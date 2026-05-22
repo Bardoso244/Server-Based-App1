@@ -2,9 +2,9 @@ name: Terraform CI
 
 on:
   push:
-    branches: [main]
+    branches: [Main]
   pull_request:
-    branches: [main]
+    branches: [Main]
 
 permissions:
   id-token: write
