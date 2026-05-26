@@ -30,14 +30,14 @@ jobs:
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
 
-      - name: Format Terraform code
-        run: terraform fmt -check -recursive
-
       - name: Initialize Terraform
         run: terraform init
 
       - name: Validate Terraform configuration
         run: terraform validate
+        
+      - name: Format Terraform code
+        run: terraform fmt -check -recursive
 
       - name: Plan Terraform changes
         run: terraform plan -out=tfplan
