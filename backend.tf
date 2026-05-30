@@ -3,7 +3,7 @@ terraform {
     bucket = "server-based-app1-bartr"
     key = "prod/terraform.tfstate"
     region = "eu-west-2"
-    dynamodb_table = "terraform-lock-table"
+    dynamodb_table = "use-lockfile"
     encrypt = true
   }
 }
