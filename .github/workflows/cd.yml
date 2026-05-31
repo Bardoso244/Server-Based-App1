@@ -20,7 +20,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GithubActions_Server_Based_App1
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/Github_Actions_Server_Based_App1
           aws-region: eu-west-2
 
       - name: Verify AWS credentials
@@ -34,7 +34,3 @@ jobs:
 
       - name: Apply Terraform changes
         run: terraform apply -auto-approve
-
-        # Lets see how the output looks like in the logs
-      - name: Show Terraform output
-        run: terraform output
