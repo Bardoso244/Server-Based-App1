@@ -3,7 +3,7 @@ terraform {
     bucket = "server-based-app1-bartr"
     key = "prod/terraform.tfstate"
     region = "eu-west-2"
-    use_locking = true
+    use_lockfile = true
     encrypt = true
   }
 }
