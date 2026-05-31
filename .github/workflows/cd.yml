@@ -2,7 +2,7 @@ name: Terraform CD
 
 on:
   push:
-    branches: [Main]
+    branches: [feature/infra-clear]
 
 permissions:
   id-token: write
