@@ -2,14 +2,14 @@ name: Terraform CD
 
 on:
   push:
-    branches: [Main]
+    branches: [feature/teardown-infra]
 
 permissions:
   id-token: write
   contents: read
 
 jobs:
-  terraform-apply:
+  terraform-destroy:
     runs-on: ubuntu-latest
     environment: production
 
