@@ -35,4 +35,6 @@ jobs:
       - name: Apply Terraform changes
         run: terraform apply -auto-approve
 
-        # Optionally, you can add a step to output the Terraform state or any relevant information after applying changes.
+        # Lets see how the output looks like in the logs
+      - name: Show Terraform output
+        run: terraform output
