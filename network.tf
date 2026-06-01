@@ -87,6 +87,8 @@ resource "aws_db_subnet_group" "db_subnets" {
   }
 }
 
+# elastic IPs for NAT gateways, IGW and NAT gateways themselves, route tables and associations
+
 resource "aws_eip" "eip_nat_1" {
   domain = "vpc"
   depends_on = [ aws_internet_gateway.main_igw ]
