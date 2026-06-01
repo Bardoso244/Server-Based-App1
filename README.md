@@ -44,14 +44,18 @@ To deploy this architecture in your own AWS environment:
 
 3. Update the region to match yours, adjust the EC2 and RDS instance types to match your project requirements.
 
-4. Initialize & Deploy:
+4. Please bear in mind that the Secret Manager secret is set to have a recovery window of 0 days. 
+   This means that if you delete the secret, it will be permanently deleted immediately.
+   Be cautious when managing secrets in this configuration, as there will be no option for recovery once a secret is deleted.
+
+5. Initialize & Deploy:
 
 * Run terraform init to download the providers.
 * Run terraform plan to review the changes.
 * Run terraform apply to deploy the infrastructure.
 
-5. Access the Application: Once the deployment is complete. 
+6. Access the Application: Once the deployment is complete. 
    You can access the web application through the ALB's DNS name, which will be outputted by Terraform.
 
-6. You can upload the project to your GitHub repo to take advantage of the CICD pipeline for future updates and deployments. 
+7. You can upload the project to your GitHub repo to take advantage of the CICD pipeline for future updates and deployments. 
    Remember to set up the necessary permissions and configurations for the pipeline to function correctly.

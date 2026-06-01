@@ -28,6 +28,7 @@ resource "random_password" "rds_password" {
 
 resource "aws_secretsmanager_secret" "rds_creds" {
   name = "server-based-app/rds/admin"
+  recovery_window_in_days = 0
 }
 
 resource "aws_secretsmanager_secret_version" "rds_creds_version" {
